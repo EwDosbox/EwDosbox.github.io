@@ -4,12 +4,22 @@
     padding: 0;
 }
 
+@font-face {
+    font-family: 'Dragon Slayer';
+    src: url('/fonts/DragonSlayer.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 :root {
     --primary: #F2E9DC;
+    --primary-opacity: rgb(242, 233, 220, 0.8);
     --secondary: #0A0908;
     --tertiary: #774E24;
     --quartiary: #798645;
+
     --navbar-height: 10vh;
+    --footer-height: 20vh;
 
     --my-bezier: 0.4s cubic-bezier(.17, .67, .83, .67);
 }
@@ -41,11 +51,12 @@ html {
 }
 
 .navbar-logo {
-    width: 40vw;
+    height: 90%;
+    margin-top: 10px;
     color: var(--primary);
 }
 
-.navbar-logo img{
+.navbar-logo img {
     height: 90%;
 }
 
@@ -76,20 +87,34 @@ html {
 }
 
 .hero {
-    background-color: var(--primary);
-    opacity: 0.8;
+    background-color: var(--primary-opacity);
     border-top-left-radius: 50px;
     border-bottom-left-radius: 50px;
 
-    margin-left: 12vw;
+    margin-left: 25vw;
 
     padding: 50px;
 
-    height: calc(50vh - var(--navbar-height));
+    display: flex;
+    align-items: center;
+
+    height: calc(30vh - var(--navbar-height));
+}
+
+.hero-text {
+    font-family: 'Dragon Slayer';
+    font-size: 8vh;
+    color: var(--secondary);
+    opacity: 1;
+}
+
+.hero-text-sub {
+    font-family: 'Dragon Slayer';
+    font-size: 4vh;
+    color: var(--secondary);
 }
 
 .hero-container {
-    background-image: url(/images/hero_bg/20230712_155223.jpg);
     background-size: 100vw 100vh;
     height: calc(100vh - var(--navbar-height) - 50vh);
 
@@ -106,4 +131,31 @@ html {
     background-color: var(--secondary);
     padding-top: var(--navbar-height);
     min-height: 150vh;
+}
+
+.footer {
+    border-top: 10px solid var(--quartiary);
+    background-color: var(--tertiary);
+    height: var(--footer-height);
+}
+
+.footer-wrapper {
+    margin-left: 33.33vw;
+    padding-right: 50px;
+
+    height: var(--footer-height);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.back-to-top{
+    height: 5vh;
+    width: 5vh;
+    background-color: cyan;
+
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
 }
