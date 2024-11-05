@@ -7,11 +7,11 @@ function OnStart() {
 function BackgroundSlideshow() {
     let element = document.querySelector('#hero-container-slideshow');
     const backgrounds = [
-        'url(images/hero_bg/hero_bg_1.jpg)',
-        'url(images/hero_bg/hero_bg_2.jpg)',
-        'url(images/hero_bg/hero_bg_3.jpg)',
-        'url(images/hero_bg/hero_bg_4.jpg)',
-        'url(images/hero_bg/hero_bg_5.jpg)'
+        'https://ewdosbox.github.io/images/fraid1.jpg',
+        'https://ewdosbox.github.io/images/fraid2.jpg',
+        'https://ewdosbox.github.io/images/PlatBorne1.jpg',
+        'https://ewdosbox.github.io/images/PlatBorne2.jpg',
+        'https://ewdosbox.github.io/images/PlatBorne3.jpg'
     ];
 
     let currentIndex = 0;
