@@ -150,12 +150,15 @@ html {
     align-items: center;
 }
 
-.back-to-top{
+.back-to-top {
     height: 5vh;
     width: 5vh;
-    background-color: cyan;
 
     position: fixed;
     right: 20px;
     bottom: 20px;
+}
+
+.back-to-top img:hover {
+    filter: drop-shadow(0 0 5px rgba(0, 0, 255, 0.5)); /* Blue shadow */
 }
