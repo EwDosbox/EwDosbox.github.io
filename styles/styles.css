@@ -115,12 +115,26 @@ html {
 }
 
 .hero-container {
+    background-image: url("./../images/PlatBorne3.png");
     background-size: 100vw 100vh;
-    height: calc(100vh - var(--navbar-height) - 50vh);
+    height: calc(100vh - var(--navbar-height));
+}
+.hero-black-overlay{
+    background-color: rgba(0, 0, 0, 0.25);
 
+    height: 100%;
     padding-top: 25vh;
     padding-bottom: 25vh;
+}
 
+.projects{
+    background-color: #0A0908;
+}
+
+.project-roomstretch{
+    background-color: #F2E9DC;
+    height: 20vh;
+    width: 70vw;
 }
 
 .contact {
@@ -132,6 +146,7 @@ html {
     padding-top: var(--navbar-height);
     min-height: 150vh;
 }
+
 
 .footer {
     border-top: 10px solid var(--quartiary);
@@ -160,5 +175,5 @@ html {
 }
 
 .back-to-top img:hover {
-    filter: drop-shadow(0 0 5px rgba(0, 0, 255, 0.5)); /* Blue shadow */
+    filter: drop-shadow(0 0 3px var(--quartiary));
 }
