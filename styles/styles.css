@@ -125,25 +125,13 @@ h4 {
     height: calc(30vh - var(--navbar-height));
 }
 
-.hero-text {
-    font-family: 'Dragon Slayer';
-    font-size: 8vh;
-    color: var(--secondary);
-    opacity: 1;
-}
-
-.hero-text-sub {
-    font-family: 'Dragon Slayer';
-    font-size: 4vh;
-    color: var(--secondary);
-}
-
 .hero-container {
     background-image: url("./../images/PlatBorne3.png");
     background-size: 100vw 100vh;
     height: calc(100vh - var(--navbar-height));
 }
-.hero-black-overlay{
+
+.hero-black-overlay {
     background-color: rgba(0, 0, 0, 0.25);
 
     height: 100%;
@@ -151,14 +139,40 @@ h4 {
     padding-bottom: 25vh;
 }
 
-.projects{
+.projects {
     background-color: #0A0908;
 }
 
-.project-roomstretch{
+.project {
     background-color: #F2E9DC;
-    height: 20vh;
+    min-height: 20vh;
     width: 70vw;
+
+    padding: 50px;
+
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+
+}
+
+.project-roomstretch {
+    margin-right: 33.33vw;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+}
+
+.project-platborne {
+    width: auto;
+
+    margin-left: 33.33vw;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+}
+
+.project-fraid {
+    margin-right: 33.33vw;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
 }
 
 .contact {
