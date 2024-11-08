@@ -1,24 +1,41 @@
 <!DOCTYPE html>
-<html lang="cs-CS">
+<html lang="en">
 
 <head>
-    <title>EwDosbox</title>
-    <meta charset="utf-8">
-    <meta name="description" content="EwDosbox">
-    <link rel="icon" type="image/png" href="">
-    <link rel="stylesheet" href="./../styles/ukoly.css" type="text/css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./styles.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <title>Basic HTML Document</title>
 </head>
 
 <body>
-
-    <div class="menu">
-        MENU
+  <!-- Slider main container -->
+  <div class="swiper">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <img src="https://www.w3schools.com/w3images/lights.jpg" alt="Slide 1">
+      </div>
+      <div class="swiper-slide">
+        <img src="https://www.w3schools.com/w3images/nature.jpg" alt="Slide 2">
+      </div>
+      <div class="swiper-slide">
+        <img src="https://www.w3schools.com/w3images/mountains.jpg" alt="Slide 3">
+      </div>
     </div>
+    <!-- If we need pagination -->
+    <div class="swiper-pagination"></div>
 
-    <button class="menu-button">
-        Button Na Menu
-    </button>
-    <script src="./../scripts\ukoly.js"></script>
+    <!-- If we need navigation buttons -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+
+    <!-- If we need scrollbar -->
+    <div class="swiper-scrollbar"></div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="./swiper.js"></script>
 </body>
 
 </html>
