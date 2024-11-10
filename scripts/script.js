@@ -3,7 +3,6 @@ OnStart();
 function OnStart() {
     BackgroundSlideshow();
 }
-
 function BackgroundSlideshow() {
     let element = document.querySelector('#hero-container-slideshow');
     const backgrounds = [
@@ -22,4 +21,21 @@ function BackgroundSlideshow() {
     }
 
     setInterval(changeBackground, 2000);
+
+    // Apply CSS based on window width
+    function applyResponsiveStyles() {
+        if (window.innerWidth < 968) {
+            element.style.backgroundSize = 'auto';
+            element.style.backgroundPosition = 'center';
+        } else {
+            element.style.backgroundSize = 'cover';
+            element.style.backgroundPosition = 'center';
+        }
+    }
+
+    // Initial call
+    applyResponsiveStyles();
+
+    // Update styles on window resize
+    window.addEventListener('resize', applyResponsiveStyles);
 }

@@ -75,13 +75,15 @@ h4 {
 }
 
 .navbar-logo {
-    height: 90%;
-    margin-top: 10px;
+    height: 75%;
+    width: 80%;
     color: var(--primary);
-}
 
-.navbar-logo img {
-    height: 90%;
+    background-image: url("./../images/logos/logo-EwDosbox.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-right: 40%;
 }
 
 .navbar-buttons {
@@ -92,7 +94,9 @@ h4 {
 .navbar-button {
     margin: 10px;
     padding: 10px;
-    display: block;
+
+    min-height: 3vh;
+    min-width: 10vw;
 
     background-color: var(--quartiary);
     color: var(--primary);
@@ -146,7 +150,6 @@ h4 {
 .project {
     background-color: #F2E9DC;
     min-height: 20vh;
-    width: 70vw;
 
     padding: 50px;
 
@@ -175,10 +178,69 @@ h4 {
     border-bottom-right-radius: 50px;
 }
 
-.contact {
+.project-text {
+    font-family: 'Dragon Slayer';
+    font-size: 16pt;
+    color: var(--secondary);
+}
+
+.contact-me {
     background-color: var(--primary);
 }
 
+.contact-me-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-title{
+    font-family: 'Dragon Slayer';
+    font-size: 30pt;
+}
+
+.contact-icons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-icon{
+    display: block;
+    height: 50px;
+    width: 50px;
+
+    margin: 20px;
+}
+
+.github-icon {
+    background-image: url("./../images/logos/logo-GitHub.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.itch-icon {
+    background-image: url("./../images/logos/logo-Itch.Io.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.email-icon {
+    background-image: url("./../images/logos/logo-EMail.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.phone-icon {
+    background-image: url("./../images/logos/logo-Telephone.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
 .page {
     background-color: var(--secondary);
     padding-top: var(--navbar-height);
