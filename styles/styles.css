@@ -5,8 +5,15 @@
 }
 
 @font-face {
+    font-family: 'Dragon Fire';
+    src: url("./../fonts/DragonFire.otf") format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
     font-family: 'Dragon Slayer';
-    src: url('https://ewdosbox.github.io/fonts/DragonSlayer.ttf') format('truetype');
+    src: url("./../fonts/DragonSlayer.ttf") format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -184,6 +191,7 @@ h4 {
 .project-text {
     font-family: 'Dragon Slayer';
     font-size: 16pt;
+    font-family: 'Dragon Fire';
     color: var(--secondary);
 }
 
