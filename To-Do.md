@@ -1,11 +1,12 @@
 # To-Do
+
 - [ ] Icon
 - [X] remove Contact me text
 - [ ] Center buttons
-- [ ] Logo Position
+- [X] Logo Position
 - [ ] Better Background for projects
 - [ ] Same size Icons
 - [ ] O mne
 - [ ] Breakpoints
-    - [ ] Smaller Hero
-    - [ ] Bigger Contact me
+  - [ ] Smaller Hero
+  - [ ] Bigger Contact me

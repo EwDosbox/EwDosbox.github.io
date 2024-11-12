@@ -75,8 +75,8 @@ h4 {
 }
 
 .navbar-logo {
-    height: 75%;
-    width: 80%;
+    height: calc(0.85 * var(--navbar-height));
+    width: 20vw;
     color: var(--primary);
 
     background-image: url("./../images/logos/logo-EwDosbox.svg");
