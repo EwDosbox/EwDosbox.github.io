@@ -1,9 +1,28 @@
+/* Global Styles */
 * {
-    font-family: "Dragon Slayer";
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
+html {
+    font-family: "Dragon Slayer";
+    font-size: 25px;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --primary: #F2E9DC;
+    --primary-opacity: rgb(242, 233, 220, 0.8);
+    --secondary: #0A0908;
+    --tertiary: #774E24;
+    --quartiary: #798645;
+
+    --navbar-height: 10vh;
+    --my-bezier: 0.4s cubic-bezier(.17, .67, .83, .67);
+}
+
+/* Font Faces */
 @font-face {
     font-family: 'Dragon Fire';
     src: url("./../fonts/DragonFire.otf") format('opentype');
@@ -18,58 +37,37 @@
     font-style: normal;
 }
 
-:root {
-    --primary: #F2E9DC;
-    --primary-opacity: rgb(242, 233, 220, 0.8);
-    --secondary: #0A0908;
-    --tertiary: #774E24;
-    --quartiary: #798645;
-
-    --navbar-height: 10vh;
-    --footer-height: 20vh;
-
-    --my-bezier: 0.4s cubic-bezier(.17, .67, .83, .67);
-}
-
-html {
-    font-size: 25px;
-    scroll-behavior: smooth;
+/* Headings */
+h1, h2, h3, h4 {
+    font-family: 'Dragon Slayer';
+    color: var(--secondary);
+    margin-bottom: 20px;
 }
 
 h1 {
-    font-family: 'Dragon Slayer';
     font-size: 50px;
-    color: var(--secondary);
 }
 
 h2 {
-    font-family: 'Dragon Slayer';
     font-size: 40px;
-    color: var(--secondary);
 }
 
 h3 {
-    font-family: 'Dragon Slayer';
     font-size: 30px;
-    color: var(--secondary);
 }
 
 h4 {
-    font-family: 'Dragon Slayer';
     font-size: 20px;
-    color: var(--secondary);
 }
 
+/* Navbar Styles */
 .navbar {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
-
     height: var(--navbar-height);
-
     background-color: var(--tertiary);
-
     padding-left: 20px;
     padding-right: 20px;
 }
@@ -85,7 +83,6 @@ h4 {
     height: calc(0.85 * var(--navbar-height));
     width: 20vw;
     color: var(--primary);
-
     background-image: url("./../images/logos/LogoEwDosbox.svg");
     background-size: contain;
     background-repeat: no-repeat;
@@ -101,43 +98,33 @@ h4 {
 .navbar-button {
     margin: 10px;
     padding: 10px;
-
     min-height: 3vh;
     min-width: 10vw;
-
     background-color: var(--quartiary);
     color: var(--primary);
     text-decoration: none;
-
-    transition: background-color var(--my-bezier),
-        color var(--my-bezier),
-        transform var(--my-bezier);
-        
+    transition: background-color var(--my-bezier), color var(--my-bezier), transform var(--my-bezier);
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .navbar-button:hover {
+    cursor: pointer;
     transform: scale(1.1);
-
     background-color: var(--primary);
     color: var(--quartiary);
 }
 
+/* Hero Section */
 .hero {
     background-color: var(--primary-opacity);
     border-top-left-radius: 50px;
     border-bottom-left-radius: 50px;
-
     margin-left: 25vw;
-
     padding: 50px;
-
     display: flex;
     align-items: center;
-
-    height: calc(30vh - var(--navbar-height));
 }
 
 .hero-container {
@@ -148,22 +135,52 @@ h4 {
 
 .hero-black-overlay {
     background-color: rgba(0, 0, 0, 0.25);
-
     height: 100%;
     padding-top: 25vh;
     padding-bottom: 25vh;
 }
 
+/* About Me Section */
+.about-me {
+    background-color: var(--primary);
+    padding: 50px;
+    border-radius: 50px;
+    margin: 50px;
+}
+
+.about-me-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-me-title {
+    font-family: 'Dragon Slayer';
+    font-size: 40px;
+    color: var(--secondary);
+    margin-bottom: 20px;
+}
+
+.about-me-text {
+    font-family: 'Dragon Fire';
+    font-size: 20pt;
+    color: var(--secondary);
+    text-align: justify;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Projects Section */
 .projects {
-    background-color: #0A0908;
+    background: linear-gradient(0deg, var(--primary), var(--quartiary), var(--tertiary), var(--secondary));
 }
 
 .project {
     background-color: #F2E9DC;
     min-height: 20vh;
-
     padding: 50px;
-
     margin-top: 10vh;
     margin-bottom: 10vh;
 }
@@ -176,7 +193,6 @@ h4 {
 
 .project-platborne {
     width: auto;
-
     margin-left: 33.33vw;
     border-top-left-radius: 50px;
     border-bottom-left-radius: 50px;
@@ -185,16 +201,17 @@ h4 {
 .project-fraid {
     margin-right: 33.33vw;
     border-top-right-radius: 50px;
-    border-bottom-right-radius: 50px;
+    margin-bottom: -1px;
 }
 
 .project-text {
-    font-family: 'Dragon Slayer';
-    font-size: 16pt;
     font-family: 'Dragon Fire';
+    font-size: 20pt;
+    text-align: justify;
     color: var(--secondary);
 }
 
+/* Contact Section */
 .contact-me {
     background-color: var(--primary);
 }
@@ -221,7 +238,6 @@ h4 {
     display: block;
     height: 50px;
     width: 50px;
-
     margin: 20px;
 }
 
@@ -253,16 +269,17 @@ h4 {
     background-size: contain;
 }
 
+/* Page Styles */
 .page {
     background-color: var(--secondary);
     padding-top: var(--navbar-height);
     min-height: 150vh;
 }
 
+/* Back to Top Button */
 .back-to-top {
     height: 5vh;
     width: 5vh;
-
     position: fixed;
     right: 20px;
     bottom: 20px;
