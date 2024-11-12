@@ -1,5 +1,6 @@
 # To-Do
-- [ ] remove Contact me text
+- [ ] Icon
+- [X] remove Contact me text
 - [ ] Center buttons
 - [ ] Logo Position
 - [ ] Better Background for projects

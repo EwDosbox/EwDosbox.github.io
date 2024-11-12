@@ -35,7 +35,7 @@ h1 {
     color: var(--secondary);
 }
 
-h2{
+h2 {
     font-family: 'Dragon Slayer';
     font-size: 40px;
     color: var(--secondary);
@@ -155,7 +155,6 @@ h4 {
 
     margin-top: 10vh;
     margin-bottom: 10vh;
-
 }
 
 .project-roomstretch {
@@ -195,18 +194,18 @@ h4 {
     justify-content: center;
 }
 
-.contact-title{
+.contact-title {
     font-family: 'Dragon Slayer';
     font-size: 30pt;
 }
 
-.contact-icons{
+.contact-icons {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.contact-icon{
+.contact-icon {
     display: block;
     height: 50px;
     width: 50px;
@@ -241,28 +240,11 @@ h4 {
     background-repeat: no-repeat;
     background-size: contain;
 }
+
 .page {
     background-color: var(--secondary);
     padding-top: var(--navbar-height);
     min-height: 150vh;
-}
-
-
-.footer {
-    border-top: 10px solid var(--quartiary);
-    background-color: var(--tertiary);
-    height: var(--footer-height);
-}
-
-.footer-wrapper {
-    margin-left: 33.33vw;
-    padding-right: 50px;
-
-    height: var(--footer-height);
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 }
 
 .back-to-top {
