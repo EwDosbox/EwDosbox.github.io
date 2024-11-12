@@ -105,6 +105,10 @@ h4 {
     transition: background-color var(--my-bezier),
         color var(--my-bezier),
         transform var(--my-bezier);
+        
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .navbar-button:hover {

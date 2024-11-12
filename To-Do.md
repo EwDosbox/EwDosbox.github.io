@@ -2,7 +2,7 @@
 
 - [ ] Icon
 - [X] remove Contact me text
-- [ ] Center buttons
+- [X] Center buttons
 - [X] Logo Position
 - [ ] Better Background for projects
 - [ ] Same size Icons
