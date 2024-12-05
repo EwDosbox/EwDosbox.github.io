@@ -1,0 +1,75 @@
+* {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    color: white;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+}
+
+.weird-little-guy-on-top {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    width: 50px;
+    height: 50px;
+    background-color: white;
+}
+
+h1 {
+    font-size: 50px;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.wrapper-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.box {
+    width: 15vw;
+    height: 15vw;
+    background-color: white;
+    padding: 10px;
+    margin: 10px;
+    position: relative;
+}
+
+.wrapper-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.box-text {
+    color: black;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.small-box {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    width: 1vw;
+    height: 1vw;
+    background-color: black;
+}
+
+@media (max-width: 1000px) {
+    .box {
+        width: 15vh;
+        height: 15vh;
+    }
+}
