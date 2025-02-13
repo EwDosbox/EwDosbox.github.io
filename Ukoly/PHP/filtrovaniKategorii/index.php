@@ -3,6 +3,12 @@ include("./../Db.php");
 
 Db::connect('localhost', 'articles', 'root', '');
 
+if (!isset($_SESSION['user_id'])) {
+    header('Location: login.php');
+    exit();
+}
+
+
 $clanky = Db::queryAll('
     SELECT *,
     categories.name as category
@@ -15,7 +21,7 @@ $category_ids = Db::queryAll('
     FROM categories
     ');
 
-if (isset($_POST['add']) ) {
+if (isset($_POST['add'])) {
     Db::insert('articles', [
         'title' => $_POST['title'],
         'text' => $_POST['text'],
