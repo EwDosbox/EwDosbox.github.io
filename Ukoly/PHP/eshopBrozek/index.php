@@ -1,11 +1,17 @@
 <?php
     session_start();
-include("./../Db.php");
-Db::connect('localhost', 'eshop', 'root', '');
+    include("./../Db.php");
 
-$products = Db::queryAll('SELECT * FROM products');
-$categories = array_unique(array_column($products, 'category'));
+    Db::connect('localhost', 'eshop', 'root', '');
 
+    $products = Db::queryAll('
+    SELECT *,
+    categories.name as category
+    FROM products
+    LEFT JOIN categories
+    ON products.category_id = categories.id
+    ');
+    
 ?>
 
 <!DOCTYPE html>
@@ -65,18 +71,27 @@ $categories = array_unique(array_column($products, 'category'));
             }
 
             .product__image img {
-                max-width: 150px;
+                width: 150px;
+                height: 150px;
             }
     </style>
 </head>
 <body>
     <div class="navbar">
-            <?php foreach($categories as $category): ?>
+            <?php $oldProduct = null; ?>
+            <?php foreach($products as $product): ?>
+                <?php
+                    if (isset($oldProduct) && $product['category'] == $oldProduct['category'] ) {
+                        continue ;
+                    }
+                ?>
                     <div class="navbar-item">
-                        <a href="index.php?category=<?= $category ?>">
-                            <?= $category ?>
+                        <a href="index.php?category=<?= $product['category'] ?>">
+                            <?= $product['category'] ?>
                         </a>
                     </div>
+
+                <?php $oldProduct = $product; ?>
             <?php endforeach; ?>
             <div class="navbar-item">
                 <a href="index.php">
@@ -88,7 +103,7 @@ $categories = array_unique(array_column($products, 'category'));
     <?php
             if (isset($_GET['category'])) {
                 $products = array_filter($products, function($var) {
-                    return $var['category'] === $_GET['category'];
+                    return $var['category'] == $_GET['category'];
                 });
             }
     ?>

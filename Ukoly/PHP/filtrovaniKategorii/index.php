@@ -1,33 +1,34 @@
 <?php
-require_once('Db.php');
+include("./../Db.php");
 
-Db::connect('localhost', 'posts', 'root', '');
+Db::connect('localhost', 'articles', 'root', '');
 
-$clanky = Db::queryAll('SELECT * FROM article');
+$clanky = Db::queryAll('
+    SELECT *,
+    categories.name as category
+    FROM articles
+    LEFT JOIN categories
+    ON articles.category_id = categories.id
+');
+$category_ids = Db::queryAll('
+    SELECT *
+    FROM categories
+    ');
 
-if (isset($_POST['add'])) {
-    Db::insert('article', [
+if (isset($_POST['add']) ) {
+    Db::insert('articles', [
         'title' => $_POST['title'],
-        'category' => $_POST['category'],
         'text' => $_POST['text'],
+        'autor' => 'POST',
+        'category_id' => $_POST['category']
     ]);
-    header("Location: /web");
+    header("Location: /web/filtrovaniKategorii");
     die();
 }
 
 if (isset($_POST['remove'])) {
-    Db::query('DELETE FROM article WHERE id = ?', $_POST['id']);
-    header("Location: /web");
-    die();
-}
-
-if (isset($_POST['update'])) {
-    Db::update('article', [
-        'title' => $_POST['title'],
-        'category' => $_POST['category'],
-        'text' => $_POST['text'],
-    ], 'WHERE id = ?', $_POST['id']);
-    header("Location: /web");
+    Db::query('DELETE FROM articles WHERE id = ?', $_POST['id']);
+    header("Location: /web/filtrovaniKategorii");
     die();
 }
 ?>
@@ -39,7 +40,7 @@ if (isset($_POST['update'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <title>Database</title>
+    <title>Filtrovani Kategorii</title>
 </head>
 
 <body>
@@ -48,6 +49,9 @@ if (isset($_POST['update'])) {
         <select name="category">
             <option value="" disabled selected>
                 Vyber kategorii
+            </option>
+            <option value="">
+                Vse
             </option>
             <?php
             $categories = array_unique(array_column($clanky, 'category'));
@@ -81,8 +85,7 @@ if (isset($_POST['update'])) {
             <th>Nazev Clanku</th>
             <th>Kategorie</th>
             <th>Text</th>
-            <th>Delete Entry</th>
-            <th>Edit Entry</th>
+            <th>Button</th>
         </tr>
         <?php foreach ($clanky as $clanek):  ?>
             <tr>
@@ -95,27 +98,34 @@ if (isset($_POST['update'])) {
                         <button name="remove" type="submit">remove entry</button>
                     </form>
                 </td>
-                <td>
-                    <form method="post">
-                        <input type="text" name="title" id="name">
-                        <input type="text" name="category" id="category">
-                        <input type="text" name="text" id="text">
-                        <input type="hidden" name="id" value="<?= $clanek['id'] ?>">
-                        <button name="update" type="submit">update entry</button>
-                    </form>
-                </td>
             </tr>
         <?php endforeach; ?>
+        <tr>
+
+            <form method="post">
+                <td>
+                    <input type="text" name="title" id="name">
+                </td>
+                <td>
+                    <select name="category" id="category">
+                        <?php foreach ($category_ids as $category): ?>
+                            <option value="<?= htmlspecialchars($category['id']) ?>">
+                                <?= htmlspecialchars($category['name']) ?>
+                            </option>
+                        <?php endforeach; ?>
+                    </select>
+                </td>
+                <td>
+                    <input type="text" name="text" id="text">
+                </td>
+                <td>
+                    <button name="add" type="submit">Odeslat</button>
+                </td>
+            </form>
+        </tr>
     </table>
 
 
-
-    <form method="post">
-        <input type="text" name="title" id="name">
-        <input type="text" name="category" id="category">
-        <input type="text" name="text" id="text">
-        <button name="add" type="submit">Odeslat</button>
-    </form>
 
 </body>
 

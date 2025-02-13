@@ -107,7 +107,7 @@ $products = Db::queryAll("SELECT * FROM `products`");
                 </div>
 
                 <form action="add_to_cart.php" method="post">
-                    <input type="hidden" value="<?= $product['id'] ?>">
+                    <input type="hidden" name="id" value="<?= $product['id'] ?>">
                     <input type="number" name="quantity">
                     <button>Pridat do Kosiku</button>
                 </form>
