@@ -14,6 +14,7 @@ if ($_POST) {
     ]);
 
     $_SESSION['user_id'] = Db::getLastId();
+    $_SESSION['name'] = $_POST['name'];
 
     header('Location: index.php');
     exit();

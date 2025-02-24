@@ -1,6 +1,7 @@
 html {
     display: flex;
     justify-content: center;
+    align-items: center;
     height: 100%;
     margin: 0;
 }
@@ -31,4 +32,18 @@ html {
     text-align: left;
     background-color: #04AA6D;
     color: white;
+}
+
+.logout {
+    margin: 10px;
+
+    svg {
+        width: 25px;
+        height: 25px;
+    }
+
+    button{
+        background: none;
+        border: none;
+    }
 }

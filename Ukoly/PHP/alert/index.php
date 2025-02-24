@@ -1,6 +1,7 @@
 <?php
-include("./../Db.php");
-Db::connect('localhost', 'alert', 'root', '');
+include('./../database.php');
+
+Database::connect('alert');
 
 $errors = [];
 
@@ -40,7 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $town,
     $message
   );
-  
+
   header("Location: /web/alert");
   die();
 }
@@ -55,7 +56,7 @@ $alerts = Db::queryAll("SELECT * FROM `alert`");
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Group Work</title>
-  <link rel="stylesheet" href="form.css">
+  <link rel="stylesheet" href="./../styles.css">
 </head>
 
 <body>
@@ -88,6 +89,7 @@ $alerts = Db::queryAll("SELECT * FROM `alert`");
       <th>Address</th>
       <th>Town</th>
       <th>Message</th>
+      <th>TimeStamp</th>
     </tr>
     <?php foreach ($alerts as $alert): ?>
       <tr>
@@ -98,6 +100,7 @@ $alerts = Db::queryAll("SELECT * FROM `alert`");
         <td><?php echo htmlspecialchars($alert['address']); ?></td>
         <td><?php echo htmlspecialchars($alert['city']); ?></td>
         <td><?php echo htmlspecialchars($alert['message']); ?></td>
+        <td><?php echo htmlspecialchars(date('d.m.Y', strtotime($alert['timestamp']))); ?></td>
       </tr>
     <?php endforeach; ?>
   </table>

@@ -5,20 +5,18 @@ include("./../Db.php");
 Db::connect('localhost', 'articles', 'root', '');
 
 if ($_POST) {
-    $user = Db::queryOne('
-    SELECT id, password, name
-    FROM users
-    WHERE email=?
-    ', $_POST['email']);
+    $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
-    if (!$user || !password_verify($_POST['password'], $user['password'])) {
-        $zprava = 'Neplatné uživatelské jméno nebo heslo.';
-    } else {
-        $_SESSION['user_id'] = $user['id'];
-        $_SESSION['name'] = $user['name'];
-        header('Location: index.php');
-        exit();
-    }
+    Db::insert('users', [
+        'email' => $_POST['email'],
+        'name' => $_POST['name'],
+        'password' => $password
+    ]);
+
+    $_SESSION['user_id'] = Db::getLastId();
+
+    header('Location: index.php');
+    exit();
 }
 ?>
 <!DOCTYPE html>
@@ -27,7 +25,7 @@ if ($_POST) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Log in</title>
+    <title>Register</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Comic+Sans+MS:wght@400;600&display=swap">
     <style>
         * {
@@ -106,8 +104,12 @@ if ($_POST) {
 
 <body>
     <div class="container">
-        <h2>Log in</h2>
-        <form action="login.php" method="post">
+        <h2>Create an Account</h2>
+        <form action="register.php" method="post">
+            <div class="form-group">
+                <label for="name">Username</label>
+                <input type="text" id="name" name="name" required>
+            </div>
             <div class="form-group">
                 <label for="email">Email</label>
                 <input type="email" id="email" name="email" required>
@@ -116,7 +118,7 @@ if ($_POST) {
                 <label for="password">Password</label>
                 <input type="password" id="password" name="password" required>
             </div>
-            <button type="submit">Log in</button>
+            <button type="submit">Sign Up</button>
         </form>
     </div>
 </body>

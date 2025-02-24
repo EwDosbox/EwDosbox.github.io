@@ -6,7 +6,7 @@ Db::connect('localhost', 'articles', 'root', '');
 
 if ($_POST) {
     $user = Db::queryOne('
-    SELECT id, password, name
+    SELECT id, password
     FROM users
     WHERE email=?
     ', $_POST['email']);
@@ -15,7 +15,6 @@ if ($_POST) {
         $zprava = 'Neplatné uživatelské jméno nebo heslo.';
     } else {
         $_SESSION['user_id'] = $user['id'];
-        $_SESSION['name'] = $user['name'];
         header('Location: index.php');
         exit();
     }
@@ -27,7 +26,7 @@ if ($_POST) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Log in</title>
+    <title>Register</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Comic+Sans+MS:wght@400;600&display=swap">
     <style>
         * {
