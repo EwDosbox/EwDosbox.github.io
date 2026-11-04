@@ -1,290 +1,302 @@
 /* Global Styles */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 html {
-    font-family: "Dragon Slayer";
-    font-size: 25px;
-    scroll-behavior: smooth;
+  font-family: "Dragon Slayer";
+  font-size: 25px;
+  scroll-behavior: smooth;
 }
 
 :root {
-    --primary: #F2E9DC;
-    --primary-opacity: rgb(242, 233, 220, 0.8);
-    --secondary: #0A0908;
-    --tertiary: #774E24;
-    --quartiary: #798645;
+  --primary: #f2e9dc;
+  --primary-opacity: rgb(242, 233, 220, 0.8);
+  --secondary: #0a0908;
+  --tertiary: #774e24;
+  --quartiary: #798645;
 
-    --navbar-height: 10vh;
-    --my-bezier: 0.4s cubic-bezier(.17, .67, .83, .67);
+  --navbar-height: 10vh;
+  --my-bezier: 0.4s cubic-bezier(0.17, 0.67, 0.83, 0.67);
 }
 
 /* Font Faces */
 @font-face {
-    font-family: 'Dragon Fire';
-    src: url("./../fonts/DragonFire.otf") format('opentype');
-    font-weight: normal;
-    font-style: normal;
+  font-family: "Dragon Fire";
+  src: url("./../fonts/DragonFire.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: 'Dragon Slayer';
-    src: url("./../fonts/DragonSlayer.ttf") format('truetype');
-    font-weight: normal;
-    font-style: normal;
+  font-family: "Dragon Slayer";
+  src: url("./../fonts/DragonSlayer.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }
 
 /* Headings */
-h1, h2, h3, h4 {
-    font-family: 'Dragon Slayer';
-    color: var(--secondary);
-    margin-bottom: 20px;
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Dragon Slayer";
+  color: var(--secondary);
+  margin-bottom: 20px;
 }
 
 h1 {
-    font-size: 50px;
+  font-size: 50px;
 }
 
 h2 {
-    font-size: 40px;
+  font-size: 40px;
 }
 
 h3 {
-    font-size: 30px;
+  font-size: 30px;
 }
 
 h4 {
-    font-size: 20px;
+  font-size: 20px;
 }
 
 /* Navbar Styles */
 .navbar {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: var(--navbar-height);
-    background-color: var(--tertiary);
-    padding-left: 20px;
-    padding-right: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--navbar-height);
+  background-color: var(--tertiary);
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .navbar-wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
 }
 
 .navbar-logo {
-    height: calc(0.85 * var(--navbar-height));
-    width: 20vw;
-    color: var(--primary);
-    background-image: url("./../images/logos/LogoEwDosbox.svg");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    margin-right: 40%;
+  height: calc(0.85 * var(--navbar-height));
+  width: 20vw;
+  color: var(--primary);
+  background-image: url("./../images/logos/LogoEwDosbox.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-right: 40%;
 }
 
 .navbar-buttons {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 .navbar-button {
-    margin: 10px;
-    padding: 10px;
-    min-height: 3vh;
-    min-width: 10vw;
-    background-color: var(--quartiary);
-    color: var(--primary);
-    text-decoration: none;
-    transition: background-color var(--my-bezier), color var(--my-bezier), transform var(--my-bezier);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  margin: 10px;
+  padding: 10px;
+  min-height: 3vh;
+  min-width: 10vw;
+  background-color: var(--quartiary);
+  color: var(--primary);
+  text-decoration: none;
+  transition:
+    background-color var(--my-bezier),
+    color var(--my-bezier),
+    transform var(--my-bezier);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .navbar-button:hover {
-    cursor: pointer;
-    transform: scale(1.1);
-    background-color: var(--primary);
-    color: var(--quartiary);
+  cursor: pointer;
+  transform: scale(1.1);
+  background-color: var(--primary);
+  color: var(--quartiary);
 }
 
 /* Hero Section */
 .hero {
-    background-color: var(--primary-opacity);
-    border-top-left-radius: 50px;
-    border-bottom-left-radius: 50px;
-    margin-left: 25vw;
-    padding: 50px;
-    display: flex;
-    align-items: center;
+  background-color: var(--primary-opacity);
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+  margin-left: 25vw;
+  padding: 50px;
+  display: flex;
+  align-items: center;
 }
 
 .hero-container {
-    background-image: url("./../images/PlatBorne3.png");
-    background-size: 100vw 100vh;
-    height: calc(100vh - var(--navbar-height));
+  background-image: url("./../images/PlatBorne3.png");
+  background-size: 100vw 100vh;
+  height: calc(100vh - var(--navbar-height));
 }
 
 .hero-black-overlay {
-    background-color: rgba(0, 0, 0, 0.25);
-    height: 100%;
-    padding-top: 25vh;
-    padding-bottom: 25vh;
+  background-color: rgba(0, 0, 0, 0.25);
+  height: 100%;
+  padding-top: 25vh;
+  padding-bottom: 25vh;
 }
 
 /* About Me Section */
 .about-me {
-    background-color: var(--primary);
-    padding: 50px;
-    border-radius: 50px;
-    margin: 50px;
+  background-color: var(--primary);
+  padding: 50px;
+  border-radius: 50px;
+  margin: 50px;
 }
 
 .about-me-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .about-me-title {
-    font-family: 'Dragon Slayer';
-    font-size: 40px;
-    color: var(--secondary);
-    margin-bottom: 20px;
+  font-family: "Dragon Slayer";
+  font-size: 40px;
+  color: var(--secondary);
+  margin-bottom: 20px;
 }
 
 .about-me-text {
-    font-family: 'Dragon Fire';
-    font-size: 20pt;
-    color: var(--secondary);
-    text-align: justify;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
+  font-family: "Dragon Fire";
+  font-size: 20pt;
+  color: var(--secondary);
+  text-align: justify;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
 /* Projects Section */
 .projects {
-    background: linear-gradient(0deg, var(--primary), var(--quartiary), var(--tertiary), var(--secondary));
+  background: linear-gradient(
+    0deg,
+    var(--primary),
+    var(--quartiary),
+    var(--tertiary),
+    var(--secondary)
+  );
 }
 
 .project {
-    background-color: #F2E9DC;
-    min-height: 20vh;
-    padding: 50px;
-    margin-top: 10vh;
-    margin-bottom: 10vh;
+  background-color: #f2e9dc;
+  min-height: 20vh;
+  padding: 50px;
+  margin-top: 10vh;
+  margin-bottom: 10vh;
 }
 
 .project-roomstretch {
-    margin-right: 33.33vw;
-    border-top-right-radius: 50px;
-    border-bottom-right-radius: 50px;
+  margin-right: 33.33vw;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
 }
 
 .project-platborne {
-    width: auto;
-    margin-left: 33.33vw;
-    border-top-left-radius: 50px;
-    border-bottom-left-radius: 50px;
+  width: auto;
+  margin-left: 33.33vw;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
 }
 
 .project-fraid {
-    margin-right: 33.33vw;
-    border-top-right-radius: 50px;
-    margin-bottom: -1px;
+  margin-right: 33.33vw;
+  border-top-right-radius: 50px;
+  margin-bottom: -1px;
 }
 
 .project-text {
-    font-family: 'Dragon Fire';
-    font-size: 20pt;
-    text-align: justify;
-    color: var(--secondary);
+  font-family: "Dragon Fire";
+  font-size: 20pt;
+  text-align: justify;
+  color: var(--secondary);
 }
 
 /* Contact Section */
 .contact-me {
-    background-color: var(--primary);
+  background-color: var(--primary);
 }
 
 .contact-me-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .contact-title {
-    font-family: 'Dragon Slayer';
-    font-size: 30pt;
+  font-family: "Dragon Slayer";
+  font-size: 30pt;
 }
 
 .contact-icons {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .contact-icon {
-    display: block;
-    height: 50px;
-    width: 50px;
-    margin: 20px;
+  display: block;
+  height: 50px;
+  width: 50px;
+  margin: 20px;
 }
 
 .github-icon {
-    background-image: url("./../images/logos/logo-GitHub.svg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
+  background-image: url("./../images/logos/logo-GitHub.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 .itch-icon {
-    background-image: url("./../images/logos/logo-Itch.Io.svg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
+  background-image: url("./../images/logos/logo-Itch.Io.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 .email-icon {
-    background-image: url("./../images/logos/logo-EMail.svg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
+  background-image: url("./../images/logos/logo-EMail.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 .phone-icon {
-    background-image: url("./../images/logos/logo-Telephone.svg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
+  background-image: url("./../images/logos/logo-Telephone.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 /* Page Styles */
 .page {
-    background-color: var(--secondary);
-    padding-top: var(--navbar-height);
-    min-height: 150vh;
+  background-color: var(--secondary);
+  padding-top: var(--navbar-height);
+  min-height: 150vh;
 }
 
 /* Back to Top Button */
 .back-to-top {
-    height: 5vh;
-    width: 5vh;
-    position: fixed;
-    right: 20px;
-    bottom: 20px;
+  height: 5vh;
+  width: 5vh;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
 }
 
 .back-to-top img:hover {
-    filter: drop-shadow(0 0 3px var(--quartiary));
+  filter: drop-shadow(0 0 3px var(--quartiary));
 }

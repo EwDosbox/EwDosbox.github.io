@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="cs-CS">
+  <head>
+    <title> {{ page.title }}</title>
+    <meta charset="utf-8" />
+    <meta name="description" content="EwDosbox" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/png" href="{{ '/images/logos/favicon.png' | relative_url }}" />
+    <link rel="stylesheet" href="{{ '/styles/styles.css' | relative_url }}" type="text/css" />
+  </head>
+
+    {% include navbar.html %}
+
+    {{content}}
+
+    {% include footer.html %}
+
+
+    <a class="back-to-top" href="#top">
+      <img src="{{ '/images/logos/UpChevron.svg' | relative_url }}" alt="Back to top" />
+    </a>
+
+    <script src="{{ '/scripts/script.js' | relative_url }}"></script>
+  </body>
+</html>

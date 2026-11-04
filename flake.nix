@@ -1,25 +1,37 @@
 {
-  description = "EwDosbox Personal Page";
+  description = "Jekyll development environment";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
   };
 
-  outputs = { self, nixpkgs }:
-    let
-      system = "x86_64-linux";
-      pkgs = nixpkgs.legacyPackages.${system};
-    in
-    {
-      devShells.${system}.default = pkgs.mkShell {
+  outputs = {
+    self,
+    nixpkgs,
+    ...
+  }: let
+    supportedSystems = ["x86_64-linux" "aarch64-linux" "x86_64-darwin" "aarch64-darwin"];
+    forEachSystem = f: nixpkgs.lib.genAttrs supportedSystems (system: f system);
+  in {
+    devShells = forEachSystem (system: let
+      pkgs = import nixpkgs {inherit system;};
+    in {
+      default = pkgs.mkShell {
         buildInputs = with pkgs; [
-          nodejs
-          live-server
+          ruby
+          bundler
+          zlib
+          openssl
+          libffi
+          pkg-config
         ];
-
         shellHook = ''
-          echo "Dev Shell"
+          # Keep gems isolated inside the project directory
+          export GEM_HOME="$PWD/.gem"
+          export PATH="$GEM_HOME/bin:$PATH"
+          echo "Ruby & Jekyll development environment loaded."
         '';
       };
-    };
+    });
+  };
 }
