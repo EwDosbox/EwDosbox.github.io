@@ -1,6 +1,9 @@
 ---
 layout: default
-title: Index
+title: Linktree
 ---
 
-<p style="font-size: 50; margin: auto">Under Construction</p>
+<div class="linktree-wrapper">
+  {% for item in site.data.links %} {% include link_card.html name=item.name
+  url=item.url %} {% endfor %}
+</div>
